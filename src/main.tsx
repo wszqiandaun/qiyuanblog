@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
 //初始化样式
 import 'reset-css'
@@ -8,11 +8,14 @@ import "@/assets/styles/global.scss"
 //组件样式
 import App from './App.tsx'
 import { BrowserRouter } from "react-router-dom";
+//状态管理库
+import { Provider } from "react-redux";
+import store from '@/store';//仓库
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </Provider>
 )
